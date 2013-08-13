@@ -7,5 +7,5 @@ get "/valor-ferias" do
 	cal = CalculadoraCLT.new(params["salario"].to_f)
 	dias = params["dias"].to_i unless params["dias"].nil?
 	valor = cal.valor_ferias(:dias => dias)
-	"Valor das ferias:#{valor}"
+	"Ferias:#{valor}"
 end
