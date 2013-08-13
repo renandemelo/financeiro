@@ -5,11 +5,13 @@ class CalculadoraCLT
 	end
 
 	def valor_ferias(param = nil)
+		adicional = (1/3.0) * @salario
 		if(!param.nil? and !param[:dias].nil?)
-			return (param[:dias]/30.0) * @salario
-		else
-			return @salario
+			dias_vendidos = 30 - param[:dias]
+			adicional = adicional + (dias_vendidos/30.0 * @salario)
+			puts adicional
 		end
+		@salario + adicional
 	end
 
 end
